@@ -20,4 +20,19 @@ router.get('/register',(req,res)=>{
 router.get('/dashboard',(req,res)=>{
     res.render('admin/dashboard');
 });
+
+// Adnin quỹ đóng góp
+router.get('/quy-dong-gop',(req,res)=>{
+    res.render('admin/quy-dong-gop');
+});
+
+// Adnin nhận nuôi
+router.get('/nhan-nuoi',(req,res)=>{
+    res.render('admin/nhan-nuoi');
+});
+
+// Adnin chờ duyệt
+router.get('/cho-duyet',(req,res)=>{
+    res.render('admin/cho-duyet');
+});
 module.exports = router;

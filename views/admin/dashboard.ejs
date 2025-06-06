@@ -1,318 +1,35 @@
 <!DOCTYPE html>
 <html lang="vi">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Giao diện Quản lí Pawtect</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- Tích hợp Font Awesome để lấy icon -->
+    <link rel="stylesheet" href="css/admin.css"> <!-- Đổi tên CSS nếu cần -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap');
-
-    :root {
-        --primary-color: #00AEEF;
-        --light-blue: #E0F7FF;
-        --text-color: #333;
-        --bg-color: #F8F9FA;
-        --white-color: #FFFFFF;
-        --border-color: #DEE2E6;
-    }
-
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-
-    body {
-        font-family: 'Be Vietnam Pro', sans-serif;
-        background-color: var(--bg-color);
-        color: var(--text-color);
-    }
-
-    header {
-        display: flex;
-        align-items: center;
-        padding: 15px 30px;
-        background-color: var(--white-color);
-        border-bottom: 1px solid var(--border-color);
-    }
-
-    .menu-icon {
-        font-size: 24px;
-        color: var(--primary-color);
-        cursor: pointer;
-    }
-
-    .logo {
-        margin-left: 20px;
-    }
-
-    .logo img {
-        height: 30px;
-    }
-
-    .container {
-        display: flex;
-        padding: 30px;
-        gap: 30px;
-    }
-
-    .sidebar {
-        flex: 0 0 500px;
-        /* Cột trái có độ rộng cố định */
-        display: flex;
-        flex-direction: column;
-        gap: 30px;
-    }
-
-    .main-content {
-        flex: 1;
-        /* Cột phải chiếm phần còn lại */
-    }
-
-    h2 {
-        font-size: 28px;
-        color: var(--primary-color);
-        margin-bottom: 20px;
-    }
-
-    .filter-group {
-
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-        margin-bottom: 20px;
-    }
-
-    .filter-group button {
-        padding: 10px 20px;
-        border: 1px solid var(--border-color);
-        background-color: var(--white-color);
-        border-radius: 20px;
-        cursor: pointer;
-        font-family: 'Be Vietnam Pro', sans-serif;
-        font-size: 14px;
-        font-weight: 500;
-        transition: all 0.3s ease;
-
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    .filter-group button:hover {
-        background-color: var(--light-blue);
-        border-color: var(--primary-color);
-    }
-
-    .filter-group button.active {
-        background-color: var(--primary-color);
-        color: var(--white-color);
-        border-color: var(--primary-color);
-    }
-
-    .specific-filters {
-        display: grid;
-        /* <-- THAY ĐỔI CHÍNH: Chuyển sang dùng Grid */
-        grid-template-columns: repeat(4, 1fr);
-        /* <-- THÊM MỚI: Chia thành 3 cột bằng nhau */
-        gap: 10px;
-        margin-bottom: 20px;
-    }
-
-    /* Và đảm bảo rằng các nút bên trong không có min-width */
-    .specific-filters button {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        /* Thêm để căn giữa nội dung tốt hơn */
-        padding: 8px 10px;
-        /* Có thể điều chỉnh padding nếu cần */
-        border-radius: 10px;
-        /* Bỏ đi hoặc comment dòng min-width: 80px; */
-    }
-
-    .specific-filters button span {
-        font-size: 14px;
-    }
-
-    /* Style cũ này vẫn hữu ích cho nút Tháng/Năm */
-    .specific-filters button:not(:has(span)) {
-        padding: 12px 15px;
-        justify-content: center;
-    }
-
-    .chart-section {
-        background-color: var(--white-color);
-        padding: 20px;
-        border-radius: 15px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    }
-
-    .chart-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 25px;
-    }
-
-    .donut-chart {
-        width: 200px;
-        height: 200px;
-        border-radius: 50%;
-        /* Tạo biểu đồ tròn bằng conic-gradient, 80% là màu chính */
-        background: conic-gradient(var(--primary-color) 0% 80%, var(--light-blue) 80% 100%);
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .chart-center {
-        width: 150px;
-        height: 150px;
-        background-color: var(--white-color);
-        border-radius: 50%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .chart-center strong {
-        font-size: 40px;
-        color: var(--text-color);
-    }
-
-    .chart-center span {
-        font-size: 16px;
-        color: #6c757d;
-    }
-
-    .legend {
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-    }
-
-    .legend-item {
-        display: flex;
-        align-items: center;
-        font-size: 14px;
-    }
-
-    .legend-item .dot {
-        width: 12px;
-        height: 12px;
-        border-radius: 50%;
-        margin-right: 8px;
-    }
-
-    .legend-item .dot.pending {
-        background-color: var(--primary-color);
-    }
-
-    .legend-item .dot.received {
-        background-color: var(--white-color);
-        border: 2px solid var(--primary-color);
-    }
-
-    .main-content .case-list {
-        display: grid;
-        /* Hiển thị 2 cột nếu đủ không gian, nếu không thì 1 cột */
-        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-        gap: 20px;
-    }
-
-    .case-card {
-        background-color: var(--primary-color);
-        color: var(--white-color);
-        padding: 25px;
-        border-radius: 15px;
-        box-shadow: 0 4px 15px rgba(0, 174, 239, 0.3);
-        transition: transform 0.3s ease;
-    }
-
-    .case-card:hover {
-        transform: translateY(-5px);
-    }
-
-    .card-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 15px;
-    }
-
-    .card-header h3 {
-        font-size: 22px;
-        font-weight: 700;
-    }
-
-    .card-header i {
-        cursor: pointer;
-        opacity: 0.8;
-    }
-
-    .card-body p {
-        font-size: 15px;
-        line-height: 1.6;
-        margin-bottom: 8px;
-    }
-
-    .card-body p:last-child {
-        margin-bottom: 0;
-    }
-
-    .card-body strong {
-        font-weight: 700;
-    }
-
-    /* Responsive cho màn hình nhỏ hơn (máy tính bảng, mobile) */
-    @media (max-width: 1024px) {
-        .container {
-            flex-direction: column;
-        }
-
-        .sidebar {
-            flex: 1;
-            width: 100%;
-        }
-    }
-</style>
-
 <body>
-    <header>
-        <div class="menu-icon">
-            <i class="fas fa-bars"></i>
-        </div>
-        <div class="logo">
-            <img src="images/logo.png" alt="Pawtect Logo">
-        </div>
-        <div class="logo">
-            Pawtect 
-        </div>
-    </header>
 
-    <div class="container">
-        <!-- CỘT BÊN TRÁI -->
-        <aside class="sidebar">
+    <!-- 1. THANH MENU TRƯỢT (Không thay đổi) -->
+    <%- include('sidebar.ejs') %>
+
+    <!-- 2. HEADER CHÍNH -->
+    <%- include('header.ejs') %>
+
+    <!-- 3. KHUNG CHỨA NỘI DUNG DASHBOARD -->
+    <div class="dashboard-container">
+        <!-- CỘT BÊN TRÁI (ĐÃ ĐỔI TÊN CLASS) -->
+        <aside class="left-column">
             <section class="reception-stats">
-                <h2 style="text-align: center;">Số liệu tiếp nhận</h2>                
-                <div style=" justify-content: center;" class="filter-group time-filters">
+                <h2>Số liệu tiếp nhận</h2>
+                <div class="filter-group time-filters">
                     <button class="active">Theo tuần</button>
                     <button>Theo tháng</button>
                     <button>Theo năm</button>
                 </div>
-                <!-- Và sửa nó thành -->
                 <div class="filter-group specific-filters" id="specific-filter-container">
-                    <!-- Các nút ban đầu sẽ được tạo bởi JavaScript -->
+                    <!-- Các nút filter sẽ được JS chèn vào đây -->
                 </div>
             </section>
-
             <section class="chart-section">
                 <div class="chart-container">
                     <div class="donut-chart">
@@ -323,165 +40,32 @@
                     </div>
                 </div>
                 <div class="legend">
-                    <div class="legend-item">
-                        <span class="dot pending"></span> Chưa tiếp nhận
-                    </div>
-                    <div class="legend-item">
-                        <span class="dot received"></span> Đã tiếp nhận
-                    </div>
+                    <div class="legend-item"><span class="dot pending"></span> Chưa tiếp nhận</div>
+                    <div class="legend-item"><span class="dot received"></span> Đã tiếp nhận</div>
                 </div>
             </section>
         </aside>
 
         <!-- CỘT BÊN PHẢI -->
         <main class="main-content">
-            <h2 style="text-align: center;" >Quản lí bài đăng</h2>
+            <h2>Quản lí bài đăng</h2>
             <div class="case-list">
                 <div class="case-card">
-                    <div class="card-header">
-                        <h3>CASE #109</h3>
-                        <i class="fas fa-ellipsis-v"></i>
-                    </div>
-                    <div class="card-body">
-                        <p class="update-time">Cập nhật lúc 12:50 16/3/2023</p>
-                        <p><strong>Địa chỉ:</strong> 50/32 hẻm XYZ Đường ABC Phường 8 Quận 7</p>
-                        <p><strong>Miêu tả:</strong> Bé mèo tam thể bị tai nạn ngay tại ngã tư ABC</p>
-                    </div>
+                    <div class="card-header"><h3>CASE #109</h3><i class="fas fa-ellipsis-v"></i></div>
+                    <div class="card-body"><p class="update-time">Cập nhật lúc 12:50 16/3/2023</p><p><strong>Địa chỉ:</strong> 50/32 hẻm XYZ Đường ABC Phường 8 Quận 7</p><p><strong>Miêu tả:</strong> Bé mèo tam thể bị tai nạn ngay tại ngã tư ABC</p></div>
                 </div>
-
                 <div class="case-card">
-                    <div class="card-header">
-                        <h3>CASE #110</h3>
-                        <i class="fas fa-ellipsis-v"></i>
-                    </div>
-                    <div class="card-body">
-                        <p class="update-time">Cập nhật lúc 12:50 16/3/2023</p>
-                        <p><strong>Địa chỉ:</strong> 50/32 hẻm XYZ Đường ABC Phường 8 Quận 7</p>
-                        <p><strong>Miêu tả:</strong> Bé mèo tam thể bị tai nạn ngay tại ngã tư ABC</p>
-                    </div>
+                    <div class="card-header"><h3>CASE #110</h3><i class="fas fa-ellipsis-v"></i></div>
+                    <div class="card-body"><p class="update-time">Cập nhật lúc 12:50 16/3/2023</p><p><strong>Địa chỉ:</strong> 50/32 hẻm XYZ Đường ABC Phường 8 Quận 7</p><p><strong>Miêu tả:</strong> Bé mèo tam thể bị tai nạn ngay tại ngã tư ABC</p></div>
                 </div>
-
                 <div class="case-card">
-                    <div class="card-header">
-                        <h3>CASE #111</h3>
-                        <i class="fas fa-ellipsis-v"></i>
-                    </div>
-                    <div class="card-body">
-                        <p class="update-time">Cập nhật lúc 11:45 16/3/2023</p>
-                        <p><strong>Địa chỉ:</strong> 123 Đường LMN, Phường 4, Quận 5</p>
-                        <p><strong>Miêu tả:</strong> Chó Poodle đi lạc, có đeo vòng cổ màu đỏ.</p>
-                    </div>
+                    <div class="card-header"><h3>CASE #111</h3><i class="fas fa-ellipsis-v"></i></div>
+                    <div class="card-body"><p class="update-time">Cập nhật lúc 11:45 16/3/2023</p><p><strong>Địa chỉ:</strong> 123 Đường LMN, Phường 4, Quận 5</p><p><strong>Miêu tả:</strong> Chó Poodle đi lạc, có đeo vòng cổ màu đỏ.</p></div>
                 </div>
             </div>
         </main>
     </div>
 
-    <script src="script.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // ---- PHẦN KHAI BÁO BIẾN ----
-            const timeFilterButtons = document.querySelectorAll('.time-filters button');
-            const specificFilterContainer = document.getElementById('specific-filter-container');
-
-            // ---- CÁC HÀM TẠO NÚT ----
-
-            // Hàm tạo HTML cho các nút Tuần (mặc định)
-            function generateWeekFilters() {
-                return `
-            <button><span>T1</span> Tuần 1</button>
-            <button><span>T1</span> Tuần 2</button>
-            <button class="active"><span>T1</span> Tuần 3</button>
-            <button><span>T1</span> Tuần 4</button>
-            <button><span>T2</span> Tuần 1</button>
-            <button><span>T2</span> Tuần 2</button>
-        `;
-            }
-
-            // Hàm tạo HTML cho các nút Tháng (1-12)
-            function generateMonthFilters() {
-                let buttonsHTML = '';
-                for (let i = 1; i <= 12; i++) {
-                    // Mặc định chọn tháng hiện tại hoặc tháng 1 là active
-                    const currentMonth = new Date().getMonth() + 1;
-                    const activeClass = i === currentMonth ? 'class="active"' : '';
-                    buttonsHTML += `<button ${activeClass}>Tháng ${i}</button>`;
-                }
-                return buttonsHTML;
-            }
-
-            // Hàm tạo HTML cho các nút Năm (2020-2025)
-            function generateYearFilters() {
-                let buttonsHTML = '';
-                const currentYear = new Date().getFullYear();
-                for (let i = 2020; i <= 2025; i++) {
-                    const activeClass = i === currentYear ? 'class="active"' : '';
-                    buttonsHTML += `<button ${activeClass}>${i}</button>`;
-                }
-                return buttonsHTML;
-            }
-
-            // ---- HÀM XỬ LÝ SỰ KIỆN ----
-
-            // Hàm này sẽ gắn sự kiện click cho các nút filter chi tiết (tuần/tháng/năm)
-            // Nó cần được gọi lại mỗi khi chúng ta thay đổi nội dung của container
-            function setupSpecificFilterClicks() {
-                const specificButtons = specificFilterContainer.querySelectorAll('button');
-                specificButtons.forEach(button => {
-                    button.addEventListener('click', () => {
-                        // Xóa class 'active' khỏi tất cả các nút anh em
-                        specificButtons.forEach(btn => btn.classList.remove('active'));
-                        // Thêm class 'active' vào nút vừa được nhấn
-                        button.classList.add('active');
-                    });
-                });
-            }
-
-            // ---- LOGIC CHÍNH ----
-
-            // Gắn sự kiện click cho các nút filter chính (Theo tuần, Theo tháng, Theo năm)
-            timeFilterButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    // 1. Cập nhật trạng thái active cho nhóm filter chính
-                    timeFilterButtons.forEach(btn => btn.classList.remove('active'));
-                    button.classList.add('active');
-
-                    // 2. Lấy loại filter (tuần, tháng, hoặc năm)
-                    const filterType = button.textContent.trim();
-                    let newFiltersHTML = '';
-
-                    // 3. Quyết định nội dung HTML mới dựa trên loại filter
-                    switch (filterType) {
-                        case 'Theo tháng':
-                            newFiltersHTML = generateMonthFilters();
-                            break;
-                        case 'Theo năm':
-                            newFiltersHTML = generateYearFilters();
-                            break;
-                        case 'Theo tuần':
-                        default:
-                            newFiltersHTML = generateWeekFilters();
-                            break;
-                    }
-
-                    // 4. Cập nhật DOM với các nút mới
-                    specificFilterContainer.innerHTML = newFiltersHTML;
-
-                    // 5. QUAN TRỌNG: Gắn lại sự kiện click cho các nút vừa được tạo
-                    setupSpecificFilterClicks();
-                });
-            });
-
-            // ---- KHỞI TẠO BAN ĐẦU ----
-            // Khi trang vừa tải xong, hiển thị các nút tuần và gắn sự kiện cho chúng
-            function initialize() {
-                specificFilterContainer.innerHTML = generateWeekFilters();
-                setupSpecificFilterClicks();
-            }
-
-            initialize();
-        });
-
-    </script>
+    <script src="js/admin.js"></script>
 </body>
-
 </html>
