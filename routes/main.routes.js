@@ -15,4 +15,9 @@ router.get('/login',(req,res)=>{
 router.get('/register',(req,res)=>{
     res.render('pages/register');
 });
+
+// Adnin dashboard
+router.get('/dashboard',(req,res)=>{
+    res.render('admin/dashboard');
+});
 module.exports = router;
