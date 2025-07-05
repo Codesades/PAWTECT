@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link đến file CSS riêng của trang này -->
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/transaction-complete.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <title>Thanh toán thành công - Pawtect</title>
+</head>
+<body>
+    <div class="main-page-container">
+        <main>
+            <div class="page-navigation">
+                <a href="home.html" class="back-link" id="back-to-origin-link">
+                    ← Thanh toán thành công
+                </a>
+            </div>
+
+            <div class="success-message-container">
+                <div class="success-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h1>Thanh toán thành công</h1>
+                <p>Cảm ơn bạn đã đóng góp cho Pawtect</p>
+            </div>
+
+            <!-- YOU MAY BE INTERESTED -->
+            <section class="interest-slider-section">
+                <h2 class="section-title">CÓ THỂ BẠN QUAN TÂM</h2>
+                <div class="slider-wrapper">
+                    <button class="slider-arrow-on-card prev" id="interest-prev-btn" disabled>
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div class="interest-slider-container" id="interested-container">
+                        <!-- JavaScript will populate clinic cards here -->
+                    </div>
+                    <button class="slider-arrow-on-card next" id="interest-next-btn">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Nhúng các file JS -->
+    <script src="assets/js/data-vets.js"></script>
+    <script src="assets/js/transaction-complete.js"></script>
+</body>
+</html>

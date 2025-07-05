@@ -1,0 +1,126 @@
+/* =================================================== */
+/*             1. HEADER CHO TRANG ADMIN               */
+/* =================================================== */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Đẩy icon và logo về 2 phía */
+    padding: 15px 30px;
+    background-color: var(--white-color);
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.menu-icon {
+    font-size: 24px;
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 30px;
+}
+
+/* =================================================== */
+/*           2. SIDEBAR TỐI GIẢN (THEO ẢNH)            */
+/* =================================================== */
+.sidebar.simple-sidebar {
+    width: 280px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--white-color);
+    z-index: 1000;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 2px 0 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar.simple-sidebar.active {
+    transform: translateX(0);
+}
+
+/* Header của Sidebar */
+.sidebar.simple-sidebar .sidebar-header {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Khoảng cách giữa icon và chữ */
+    padding: 20px;
+    border-bottom: 1px solid var(--border-color);
+}
+.sidebar.simple-sidebar .user-icon-shape {
+    font-size: 2rem;
+    color: var(--primary-color);
+}
+.sidebar.simple-sidebar .user-greeting span {
+    font-size: 0.9rem;
+    color: #555;
+}
+.sidebar.simple-sidebar .user-greeting .user-name {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+/* Danh sách menu */
+.sidebar.simple-sidebar ul {
+    list-style: none;
+    padding: 20px 0;
+    margin: 0;
+    flex-grow: 1; /* Đẩy mục logout xuống */
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar.simple-sidebar ul li a {
+    display: block;
+    padding: 18px 25px; /* Giảm padding một chút */
+    color: var(--primary-color);
+    font-size: 1.25rem; /* Font lớn và rõ ràng */
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+.sidebar.simple-sidebar ul li a:hover {
+    background-color: #f0faff; /* Màu xanh rất nhạt */
+}
+
+/* Style khi một mục đang ACTIVE */
+.sidebar.simple-sidebar ul li a.active {
+    background-color: var(--primary-color-light, #e0f7ff); /* Nền xanh nhạt khi active */
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+/* Mục Đăng xuất */
+.sidebar.simple-sidebar .logout-item {
+    margin-top: auto; /* Đẩy xuống dưới cùng */
+}
+.sidebar.simple-sidebar .logout-item a {
+    border-top: 1px solid var(--border-color);
+    color: #555;
+    font-weight: 500;
+}
+.sidebar.simple-sidebar .logout-item a:hover {
+    color: #d9534f; /* Màu đỏ cảnh báo */
+    background-color: #fcf2f2;
+}
+
+/* Overlay (Giữ nguyên) */
+.overlay {
+    position: fixed; top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 999; display: none;
+}
+.overlay.active { display: block; }

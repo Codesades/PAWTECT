@@ -1,0 +1,64 @@
+
+
+/* Body styles */
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #00B2D9;
+}
+
+/* Container styles */
+.container {
+    text-align: center;
+    padding: 20px;
+    /* Áp dụng animation vào container */
+    animation: fadeOutBlur 5s ease-out forwards;
+}
+
+/* Heading styles */
+h1 {
+    color: #F8F9FA; /* Example color */
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+/* Logo styles */
+.logo {
+    width: 150px; /* Adjust size as needed */
+    height: auto;
+    margin-bottom: 20px;
+}
+
+
+
+/* Responsive styles */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    .logo {
+        width: 100px; /* Adjust for smaller screens */
+    }
+
+}
+@keyframes fadeOutBlur {
+    0% {
+        filter: blur(0px);
+        opacity: 1;
+    }
+    80% {
+        /* Bắt đầu mờ dần ở 80% thời gian */
+        filter: blur(0px);
+        opacity: 1;
+    }
+    100% {
+        /* Mờ hoàn toàn và biến mất ở cuối */
+        filter: blur(8px);
+        opacity: 0;
+    }
+}
+

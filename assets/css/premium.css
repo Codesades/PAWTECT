@@ -1,0 +1,134 @@
+/* .premium-slider-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin: 40px 0;
+  }
+*/
+  .slider-arrow-on-card {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    color: var(--primary-color);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 10;
+  }
+  
+  .slider-arrow-on-card.prev {
+    left: 0;
+  }
+  
+  .slider-arrow-on-card.next {
+    right: 0;
+  }
+  .slider-arrow-on-card i{
+    text-shadow: 0 0 3px currentColor,0 0 3px currentColor;
+  }
+  
+  .slider-arrow-on-card:hover:not(:disabled) {
+    background-color: rgba(97, 218, 245, 0.967) ;
+  }
+  
+  .slider-arrow-on-card:disabled {
+    opacity: 0.3;
+    pointer-events: none;
+  } 
+
+  /* Slider */
+
+  .premium-container {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding: 10px 5px 20px 5px;
+    scroll-snap-type: x mandatory;
+}
+
+.premium-container::-webkit-scrollbar {
+    display: none;
+}
+
+.premium-card {
+    flex: 0 0 320px;
+    background: #fff;
+    border-radius: 16px;
+    padding: 25px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    scroll-snap-align: start;
+}
+
+.premium-card h3 {
+    font-size: 22px;
+    color: var(--primary-color);
+    margin: 0 0 10px 0;
+}
+
+.premium-card .price {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 15px;
+}
+
+.premium-card .description {
+    font-size: 15px;
+    color: #666;
+    margin-bottom: 25px;
+    flex-grow: 1;
+}
+
+.premium-card .features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 30px 0;
+}
+
+.premium-card .features li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.premium-card .features i {
+    color: var(--primary-color);
+    font-size: 20px;
+}
+
+.btn-premium {
+    width: 100%;
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-premium:hover:not(:disabled) {
+    background-color: #008fbf;
+}
+
+.btn-premium:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+.back-link {
+  margin-left: 20px;
+}

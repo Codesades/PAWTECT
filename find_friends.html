@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/find_friends.css">
+    <link rel="stylesheet" href="assets/css/user_header.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <title>Tìm bạn đồng hành - Pawtect</title>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="menu-icon" id="menu-icon">
+            <i class="fas fa-bars"></i>
+        </div>
+        
+        <a href="home.html" class="logo-link">
+            <div class="logo">
+                <img src="assets/images/header_logo.png" alt="Pawtect Logo">
+            </div>
+        </a>
+        
+        <div class="user-info">
+            <a href="user.html">
+                <div class="user-greeting">
+                    <span>chào buổi sáng</span>
+                    <strong class="user-name">user!</strong>
+                </div>
+                <i class="fas fa-user user-icon-shape"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- SIDEBAR -->
+    <nav class="sidebar" id="sidebar-nav">
+        <div class="sidebar-header">
+            <a href="home.html" class="logo-link">
+                <img src="assets/images/header_logo.png" alt="Pawtect Logo">
+            </a>
+            <button class="close-btn" id="close-btn">×</button>
+        </div>
+        <ul>
+            <li><a href="donation.html">Ủng hộ quỹ Pawtect</a></li>
+            <li><a href="report-location.html">Báo cáo cứu hộ</a></li>
+            <li><a href="find_friends.html">Tìm bạn đồng hành</a></li>
+            <li><a href="premium.html">Khám phá premium</a></li>
+            <li><a href="vets.html">Kết nối với Thú y</a></li>
+            <li><a href="user.html">Bài đăng của tôi</a></li>
+            <li class="logout-item">
+                <a href="login.html" id="logout-button">Đăng xuất</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="overlay" id="overlay"></div>
+
+    <div class="main-page-container">
+        <main>
+            <div class="page-navigation">
+                <a href="home.html" class="back-link">
+                    ← Tìm bạn đồng hành
+                </a>
+            </div>
+
+            <div class="pet-grid" id="pet-grid">
+                <!-- Pet cards are loaded here -->
+                <div class="pet-card">
+                    <img src="assets/images/Milo.jpg" alt="Ảnh của Sicula">
+                    <div class="pet-info">
+                        <span class="pet-name">Sicula</span>
+                        <div class="pet-details">
+                            <p><strong>Tính cách:</strong> Tinh nghịch, năng động</p>
+                            <p><strong>Sở thích:</strong> Hạt Catsrang</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pet-card">
+                    <img src="assets/images/Simba.jpg" alt="Ảnh của Milo">
+                    <div class="pet-info">
+                        <span class="pet-name">Milo</span>
+                        <div class="pet-details">
+                            <p><strong>Tính cách:</strong> Điềm tĩnh</p>
+                            <p><strong>Sở thích:</strong> Cá ngừ</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pet-card">
+                    <img src="assets/images/Poodle.jpg" alt="Ảnh của Kiki">
+                    <div class="pet-info">
+                        <span class="pet-name">Kiki</span>
+                         <div class="pet-details">
+                            <p><strong>Tính cách:</strong> Tinh nghịch, năng động</p>
+                            <p><strong>Sở thích:</strong> Cơm thịt khô</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pet-card">
+                    <img src="assets/images/Thumper.jpg" alt="Ảnh của Labubu">
+                    <div class="pet-info">
+                        <span class="pet-name">Labubu</span>
+                         <div class="pet-details">
+                            <p><strong>Tính cách:</strong> Nhút nhát</p>
+                            <p><strong>Sở thích:</strong> Cà rốt tươi</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pet-card">
+                    <img src="assets/images/MrBean.jpg" alt="Ảnh của Mr.Bean">
+                    <div class="pet-info">
+                        <span class="pet-name">Mr.Bean</span>
+                        <div class="pet-details">
+                            <p><strong>Tính cách:</strong> Điềm tĩnh, háu ăn</p>
+                            <p><strong>Sở thích:</strong> Thịt bò</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pet-card">
+                    <img src="assets/images/KhoaiTay.jpg" alt="Ảnh của Khoai tây">
+                    <div class="pet-info">
+                        <span class="pet-name">Khoai tây</span>
+                        <div class="pet-details">
+                            <p><strong>Tính cách:</strong> Năng động, gần gũi</p>
+                            <p><strong>Sở thích:</strong> Khoai tây chiên</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="load-more-container">
+                <button id="load-more-btn">Đọc thêm</button>
+            </div>
+        </main>
+    </div>
+    
+    <!-- START: MODAL HTML -->
+    <div id="pet-modal-overlay" class="modal-overlay"></div>
+    <div id="pet-modal" class="pet-modal">
+        <button id="modal-close-btn" class="modal-close-btn">×</button>
+        <div class="modal-content">
+            <div id="modal-pet-image" class="modal-pet-image">
+                <!-- Pet image or placeholder goes here -->
+            </div>
+            <h2 id="modal-pet-name" class="modal-pet-name"></h2>
+            <div id="modal-pet-details" class="modal-pet-details">
+                <!-- Pet details go here -->
+            </div>
+            <a href="adoption_complete.html" class="btn-adopt">Yêu cầu nhận nuôi</a>
+        </div>
+    </div>
+    <!-- END: MODAL HTML -->
+
+    <script src="assets/js/find_friends.js"></script>
+    <script src="assets/js/user-navbar.js"></script>
+</body>
+</html>

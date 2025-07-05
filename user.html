@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang cá nhân - Pawtect</title>
+    <!-- Nhúng các file CSS cần thiết -->
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/user.css">
+    <link rel="stylesheet" href="assets/css/user_header.css">
+    <link rel="stylesheet" href="assets/css/back-arrow.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+</head>
+
+<body>
+    <!-- HEADER -->
+   <header>
+        <div class="menu-icon" id="menu-icon">
+            <i class="fas fa-bars"></i>
+        </div>
+
+        <a href="home.html" class="logo-link">
+            <div class="logo">
+                <img src="assets/images/header_logo.png" alt="Pawtect Logo">
+            </div>
+        </a>
+
+        <div class="user-info">
+            <a href="user.html">
+                <div class="user-greeting">
+                    <span>chào buổi sáng</span>
+                    <strong class="user-name">user!</strong>
+                </div>
+                <i class="fas fa-user user-icon-shape"></i>
+            </a>
+        </div>
+    </header>
+    <!-- SIDEBAR -->
+    <nav class="sidebar" id="sidebar-nav">
+        <div class="sidebar-header">
+            <a href="home.html" class="logo-link">
+                <img src="assets/images/header_logo.png" alt="Pawtect Logo">
+            </a>
+            <button class="close-btn" id="close-btn">×</button>
+        </div>
+        <ul>
+            <li><a href="donation.html">Ủng hộ quỹ Pawtect</a></li>
+            <li><a href="report-location.html">Báo cáo cứu hộ</a></li>
+            <li><a href="find_friends.html">Tìm bạn đồng hành</a></li>
+            <li><a href="premium.html">Khám phá premium</a></li>
+            <li><a href="vets.html">Kết nối với Thú y</a></li>
+            <li><a href="user.html">Bài đăng của tôi</a></li>
+            <li class="logout-item">
+                <a href="login.html" id="logout-button">Đăng xuất</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Nội dung chính của trang -->
+    <main class="container-user">
+        <div class="page-header-user page-navigation">
+            <a href="home.html" class="back-link">
+                ← Trang cá nhân
+            </a>
+        </div>
+
+        <!-- Phần thông tin cá nhân -->
+        <section class="profile-info-section">
+            <div class="profile-avatar"></div>
+            <h2 class="profile-name">Placeholder User</h2>
+            <p class="profile-location">Thành phố, nước</p>
+        </section>
+
+        <!-- Các tab điều hướng -->
+        <div class="profile-main-content">
+            <nav class="profile-tabs">
+                <button class="tab-button active" data-tab="posts">Bài đăng</button>
+                <button class="tab-button" data-tab="about">Về tôi</button>
+            </nav>
+
+            <!-- Nội dung của các tab -->
+            <div class="tab-content active" id="posts-content">
+                <div class="user-posts-list" id="user-posts-list-container">
+                    <!-- JS sẽ chèn các bài đăng vào đây -->
+                </div>
+            </div>
+
+            <div class="tab-content" id="about-content">
+                <h3 class="about-section-title">Mô tả về tôi</h3>
+                <div class="about-description">
+                    Mô tả về bạn
+                </div>
+
+                <h3 class="about-section-title">Ca đã tiếp nhận</h3>
+                <div class="approval-list" id="handled-cases-container">
+                    <!-- JS sẽ chèn các case đã tiếp nhận vào đây -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Nhúng các file JS cần thiết -->
+    <script src="assets/js/data.js"></script> <!-- Dùng chung data bài đăng -->
+    <script src="assets/js/user-navbar.js"></script>
+    <script src="assets/js/user-profile.js"></script>
+</body>
+
+</html>

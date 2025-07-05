@@ -1,0 +1,324 @@
+/* NỘI DUNG CHÍNH CỦA TRANG */
+.main-page-content {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 30px;
+}
+.section-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+.btn {
+    border: none;
+    padding: 12px 24px;
+    border-radius: var(--border-radius-md);
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.btn-light {
+    background-color: var(--light-color);
+    color: var(--primary-color);
+}
+
+/* --- HERO SECTION --- */
+.hero-section {
+    background-image: url('../images/Anh_Meo.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: var(--border-radius-md);
+    padding: 60px 40px;
+    color: var(--light-color);
+    min-height: 250px;
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.hero-section::after {
+    display: block; content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 178, 217, 0.85), rgba(0, 178, 217, 0.1) 80%);
+    z-index: 1;
+}
+.hero-section .hero-content { position: relative; z-index: 2; }
+.hero-content h1 { font-size: 2.5rem; max-width: 60%; margin-bottom: 20px; line-height: 1.3; text-shadow: none; }
+.hero-content .btn { box-shadow: none; }
+
+
+/* ========================================================== */
+/*           CATEGORY SLIDER - CẬP NHẬT HOÀN TOÀN             */
+/* ========================================================== */
+.categories-section {
+    margin-bottom: 30px;
+}
+.category-slider-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 0 -10px; /* Bù lại padding cho nút */
+}
+
+/* --- Arrow Buttons (Unchanged) --- */
+.category-slider-wrapper .slider-arrow {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    color: var(--primary-color);
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+.slider-arrow.prev { order: -1; }
+.slider-arrow:hover { background-color: rgba(97, 218, 245, 0.967) ; }
+.slider-arrow:disabled { opacity: 0.3; pointer-events: none; }
+.category-slider-wrapper .slider-arrow i{
+  text-shadow: 0 0 3px currentColor,0 0 3px currentColor;}
+/* --- Category Grid Container --- */
+.category-grid {
+    display: flex;
+    flex-grow: 1;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}
+.category-grid::-webkit-scrollbar { display: none; }
+
+/* --- Category Page & Cards --- */
+/* Style cho từng card, không đổi */
+.category-card {
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    padding: 25px;
+    text-align: center;
+    border-radius: var(--border-radius-md);
+    font-weight: 700;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100px;
+    transition: background-color 0.2s;
+}
+.category-card:hover { background-color: #009ac1; }
+.category-card.disabled { background-color: var(--primary-color); opacity: 0.6; cursor: not-allowed; pointer-events: none; }
+.category-card.disabled:hover { background-color: var(--primary-color); }
+
+/* --- Pagination Bar (Unchanged) --- */
+.categories-section .pagination-dots {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 20px;
+}
+.categories-section .pagination-dots .dot {
+    height: 5px; width: 20px; border-radius: 5px; background-color: #d8d8d8; transition: all 0.4s ease;
+}
+.categories-section .pagination-dots .dot.active { background-color: var(--primary-color); width: 40px; }
+
+
+/* --- RESPONSIVE CHO CATEGORY SLIDER --- */
+/* Mobile: 2x2 Grid per page */
+@media (max-width: 991px) {
+    .category-page {
+        flex: 0 0 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+        scroll-snap-align: start;
+        padding: 0 5px;
+    }
+}
+/* Desktop: 4 items per page (as a single row) */
+@media (min-width: 992px) {
+    .category-page {
+        flex: 0 0 100%;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        scroll-snap-align: start;
+    }
+}
+/* --- SỬA LẠI STYLE CHO NÚT XEM NGAY --- */
+
+.btn-view {
+    margin-top: auto;
+    background-color: transparent;
+    border-radius: var(--border-radius-sm);
+    font-size: 0.2rem;
+    align-self: flex-start;
+
+}
+
+/* Style cho chữ "Xem ngay" bên trong nút */
+.btn-view span{
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+/* Style cho SVG mũi tên */
+.btn-view .arrow-svg {
+    transition: transform 0.2s ease;
+}
+
+/* Hiệu ứng khi hover vào nút: mũi tên di chuyển */
+.btn-view:hover .arrow-svg {
+    transform: translateX(4px);
+}
+
+/* THÊM KHỐI STYLE MỚI NÀY VÀO */
+.btn-arrow-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #fff;
+  transform: translateY(5px);
+  color: #00B2D9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  font-size: 18px;
+  cursor: pointer;
+  margin-left: 60px;
+}
+
+.btn-arrow-icon:hover {
+  background-color: #e6dfdfd9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+
+
+.btn-here {
+    max-width: 110px;
+    padding: 10px 20px 10px 20px
+}
+
+
+
+/* ========================================================== */
+/*                       CÁC MỤC KHÁC GIỮ NGUYÊN              */
+/* ========================================================== */
+.scroll-section, .interest-slider-section { margin-bottom: 30px; }
+.scroll-container { display: flex; gap: 20px; }
+.rescue-card { flex: 1; display: flex; background-color: var(--primary-color); border-radius: var(--border-radius-sm); overflow: hidden; color: var(--light-color); min-width: 0; }
+.rescue-card img, .rescue-card-placeholder { width: 110px; height: 130px; object-fit: cover; }
+.rescue-card-placeholder { background-color: #e0e0e0; border: 2px dashed #ccc; }
+.rescue-card-info { padding: 15px; display: flex; flex-direction: column; justify-content: space-between;
+  align-items: center}
+.rescue-card-info span { font-size: 1rem; }
+.rescue-card-info .rescue-id { font-weight: 700; }
+.btn-view { margin-top: auto; background-color: var(--light-color); color: var(--primary-color); padding: 8px 16px; border-radius: var(--border-radius-sm); font-size: 0.9rem; align-self: flex-start; }
+.slider-wrapper { position: relative; /* This is the key */
+  display: flex;
+  align-items: center; }
+.interest-slider-container { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; border-radius: var(--border-radius-md); -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+.interest-slider-container::-webkit-scrollbar { display: none; }
+.slider-arrow-on-card { position: absolute; top: 50%; transform: translateY(-50%); 
+  z-index: 10; background-color: #fff; border: 1px solid #ddd; border-radius: 50%; 
+  width: 40px; height: 40px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.2s ease; color: var(--primary-color); 
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);flex-shrink:0;
+}
+.slider-arrow-on-card.prev { left: -20px;}
+.slider-arrow-on-card.next { right: -20px; }
+.slider-arrow-on-card i{text-shadow: 0 0 3px currentColor,0 0 3px currentColor;}
+.slider-arrow-on-card:hover:not(:disabled) { background-color: rgba(97, 218, 245, 0.967);}
+.slider-arrow-on-card:disabled { opacity: 0.3; pointer-events: none; }
+.interest-slider-container .interest-card { flex: 0 0 100%; scroll-snap-align: center; background-size: cover; background-position: center; border-radius: var(--border-radius-md); padding: 30px 40px; color: var(--light-color); position: relative; overflow: hidden; min-height: 250px; display: flex; flex-direction: column; justify-content: center; }
+.interest-card::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to right, rgba(0, 178, 217, 0.95), rgba(0, 178, 217, 0.1) 60%); z-index: 1; }
+.interest-card > * { position: relative; z-index: 2; max-width: 50%; }
+.interest-card h3 { font-size: 1.8rem; margin-bottom: 15px; }
+.interest-card p { font-size: 1rem; margin-bottom: 8px; line-height: 1.5; }
+.interest-card .btn { margin-top: 20px; align-self: flex-start; }
+.partner-logo { flex: 1; height: 90px; background-color: var(--light-color); border-radius: var(--border-radius-sm); display: flex; justify-content: center; align-items: center; padding: 15px; border: 1px solid #eee; }
+.partner-logo img { max-width: 100%; max-height: 100%; opacity: 0.8; }
+@media (max-width: 991px) {
+    .main-page-content { padding: 20px 15px; }
+    .hero-section { padding: 40px 20px; min-height: 180px; }
+    .hero-content h1 { font-size: 1.5rem; max-width: 80%; }
+    .scroll-container { overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+    .scroll-container::-webkit-scrollbar { display: none; }
+    .rescue-card, .partner-logo { scroll-snap-align: start; }
+    .pagination-dots { display: flex; justify-content: center; gap: 8px; margin-top: 15px; padding-bottom: 10px; }
+    .pagination-dots .dot { width: 8px; height: 8px; border-radius: 50%; background-color: #ccc; margin: 0; transition: all 0.3s; }
+    .pagination-dots .dot.active { background-color: var(--primary-color); transform: scale(1.2); }
+    .rescue-card { flex: 0 0 250px; }
+    .interest-slider-container .interest-card { padding: 25px; }
+    .interest-card > * { max-width: 70%; }
+    .interest-card h3 { font-size: 1.5rem; }
+    .slider-arrow-on-card { width: 35px; height: 35px; }
+    .partner-logo { flex: 0 0 120px; }
+}
+@media (max-width: 768px) {
+  .slider-arrow-on-card.prev {
+    left: 10px;
+  }
+
+  .slider-arrow-on-card.next {
+    right: 10px;
+  }
+}
+
+.partner-loop-section {
+  overflow: hidden;
+  position: relative;
+  padding: 20px 0;
+}
+
+.partner-loop-wrapper {
+  overflow: hidden;
+  width: 100%;
+}
+
+.partner-track {
+  display: flex;
+  gap: 30px;
+  animation: scroll-partners 12s linear infinite;
+}
+
+.partner-logo {
+  flex: 0 0 auto;
+  height: 90px;
+  min-width: 160px;
+  background-color: var(--white-color);
+  border-radius: var(--border-radius-sm);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  border: 1px solid #eee;
+}
+
+.partner-logo img {
+  max-width: 100%;
+  max-height: 100%;
+  opacity: 0.8;
+}
+
+/* Animation */
+@keyframes scroll-partners {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}

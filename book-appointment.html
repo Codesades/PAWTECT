@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link đến file CSS riêng của trang này -->
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/back-arrow.css">
+    <link rel="stylesheet" href="assets/css/book-appointment.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <title>Đặt lịch khám - Pawtect</title>
+</head>
+<body>
+    <div class="main-page-container">
+        <main>
+            <div class="page-navigation">
+                <!-- This link takes the user back to the list of vets -->
+                <a href="vets.html" class="back-link">
+                    ← Phòng khám Thú Y
+                </a>
+            </div>
+
+            <div class="clinic-header">
+                <img src="assets/images/Pet_Zone.png" alt="Pet Zone Logo" class="clinic-logo">
+                <!-- This h1 will be updated by JavaScript -->
+                <h1 class="clinic-name" id="clinic-name-placeholder">Đặt lịch khám</h1>
+            </div>
+
+            <form id="booking-form">
+                <div class="form-group">
+                    <input type="text" id="full-name" name="fullName" placeholder="Họ và Tên" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" id="phone-number" name="phoneNumber" placeholder="Số điện thoại" required>
+                </div>
+
+                <div class="form-group">
+                    <h2 class="form-subtitle">Chọn ngày đặt lịch</h2>
+                    <div class="select-grid">
+                        <div class="select-wrapper">
+                            <select id="select-day" name="day" required>
+                                <option value="" disabled selected>Chọn ngày</option>
+                                <!-- JS will populate days -->
+                            </select>
+                        </div>
+                        <div class="select-wrapper">
+                            <select id="select-month" name="month" required>
+                                <option value="" disabled selected>Chọn tháng</option>
+                                <!-- JS will populate months -->
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                     <div class="select-wrapper">
+                        <select id="select-time" name="time" required>
+                            <option value="" disabled selected>Chọn giờ</option>
+                            <!-- JS will populate times -->
+                        </select>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-submit">Đặt lịch</button>
+            </form>
+        </main>
+    </div>
+
+    <!-- Link to the specific JS for this page -->
+    <script src="assets/js/book-appointment.js"></script>
+</body>
+</html>

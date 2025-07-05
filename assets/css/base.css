@@ -1,0 +1,33 @@
+/* =================================================== */
+/*             1. CÀI ĐẶT CHUNG & BIẾN                 */
+/* =================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700;900&display=swap');
+
+:root {
+    --primary-color: #00B2D9;
+    --light-color: #FFFFFF;
+    --dark-text-color: #333;
+    --bg-color: #F8F9FA;
+    --white-color: #FFFFFF;
+    --border-color: #DEE2E6;
+    --sidebar-width: 280px;
+    --border-radius-md: 15px;
+    --border-radius-sm: 10px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--dark-text-color);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}

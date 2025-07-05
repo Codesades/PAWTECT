@@ -1,0 +1,120 @@
+/* =================================================== */
+/*             1. CÀI ĐẶT CHUNG & LAYOUT               */
+/* =================================================== */
+body {
+    background-color: var(--white-color);
+}
+.main-page-container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px 15px;
+}
+.page-navigation {
+    margin-bottom: 25px;
+}
+.back-link {
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+/* =================================================== */
+/*                 2. HEADER PHÒNG KHÁM                */
+/* =================================================== */
+.clinic-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.clinic-logo {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    border: 3px solid var(--primary-color);
+    padding: 5px;
+    background-color: var(--white-color);
+}
+
+.clinic-name {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--dark-text-color);
+}
+
+/* =================================================== */
+/*                      3. FORM                        */
+/* =================================================== */
+#booking-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-subtitle {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--dark-text-color);
+    margin-bottom: 15px;
+}
+
+/* --- Input Fields & Selects --- */
+input[type="text"],
+input[type="tel"],
+select {
+    width: 100%;
+    padding: 16px 20px;
+    border: 1px solid var(--primary-color);
+    border-radius: 12px;
+    font-size: 1rem;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    color: var(--dark-text-color);
+    background-color: var(--white-color);
+    appearance: none; /* Tắt giao diện mặc định của select */
+    -webkit-appearance: none;
+}
+
+input::placeholder {
+    color: #aaa;
+}
+
+.select-wrapper {
+    position: relative;
+}
+.select-wrapper::after {
+    content: '\f078'; /* Font Awesome down-arrow */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--primary-color);
+    pointer-events: none; /* Cho phép click xuyên qua icon */
+}
+
+.select-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+/* --- Nút bấm --- */
+.btn-submit {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    border: none;
+    padding: 16px;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-top: 10px;
+}
+.btn-submit:hover {
+    background-color: #008fbf;
+}

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pawtect - Cộng đồng yêu thú cưng</title>
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/home.css">
+    <link rel="stylesheet" href="assets/css/user_header.css">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700;900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="menu-icon" id="menu-icon">
+            <i class="fas fa-bars"></i>
+        </div>
+        <a href="home.html" class="logo-link">
+            <div class="logo">
+                <img src="assets/images/header_logo.png" alt="Pawtect Logo">
+            </div>
+        </a>
+        <div class="user-info">
+            <a href="user.html">
+                <div class="user-greeting">
+                    <span>chào buổi sáng</span>
+                    <strong class="user-name">user!</strong>
+                </div>
+                <i class="fas fa-user user-icon-shape"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- SIDEBAR -->
+    <nav class="sidebar" id="sidebar-nav">
+        <div class="sidebar-header">
+            <a href="home.html" class="logo-link">
+                <img src="assets/images/header_logo.png" alt="Pawtect Logo">
+            </a>
+            <button class="close-btn" id="close-btn">×</button>
+        </div>
+        <ul>
+            <li><a href="donation.html">Ủng hộ quỹ Pawtect</a></li>
+            <li><a href="report-location.html">Báo cáo cứu hộ</a></li>
+            <li><a href="find_friends.html">Tìm bạn đồng hành</a></li>
+            <li><a href="premium.html">Khám phá premium</a></li>
+            <li><a href="vets.html">Kết nối với Thú y</a></li>
+            <li><a href="user.html">Bài đăng của tôi</a></li>
+            <li class="logout-item">
+                    <a href="login.html" id="logout-button">Đăng xuất</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="overlay" id="overlay"></div>
+
+    <!-- MAIN PAGE CONTENT WRAPPER -->
+    <div class="main-page-content">
+        <main>
+            <!-- HERO SECTION -->
+            <section class="hero-section">
+                <div class="hero-content">
+                    <h1>Ủng hộ cộng đồng PAWTECT ngay!</h1>
+                    <button class="btn btn-light"><a href="donation.html">Ủng hộ ngay!</a></button>
+                </div>
+            </section>
+
+            <!-- CATEGORIES -->
+            <section class="categories-section">
+                <h2 class="section-title">DANH MỤC</h2>
+                <div class="category-slider-wrapper">
+                    <button class="slider-arrow prev" id="category-prev-btn">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div class="category-grid" id="category-grid-container">
+                        <!-- JavaScript will populate this -->
+                    </div>
+                    <button class="slider-arrow next" id="category-next-btn">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                <div class="pagination-dots" id="category-pagination">
+                    <!-- JavaScript will populate this -->
+                </div>
+            </section>
+
+            <!-- NEARBY RESCUE -->
+            <section class="scroll-section">
+                <h2 class="section-title">CA CỨU HỘ CẦN HỖ TRỢ</h2>
+                <div class="slider-wrapper">
+                    <button class="slider-arrow-on-card prev" id="rescue-prev-btn" disabled>
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div class="scroll-container" id="nearby-rescue-container">
+                        <!-- JS will populate this -->
+                    </div>
+                    <button class="slider-arrow-on-card next" id="rescue-next-btn">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                <div class="pagination-dots" id="rescue-pagination">
+                    <!-- JS will populate this -->
+                </div>
+            </section>
+
+            <!-- YOU MAY BE INTERESTED (NEW SLIDER STRUCTURE) -->
+            <section class="interest-slider-section">
+                <h2 class="section-title">CÓ THỂ BẠN QUAN TÂM</h2>
+                <div class="slider-wrapper">
+                    <button class="slider-arrow-on-card prev" id="interest-prev-btn" disabled>
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div class="interest-slider-container" id="interested-container">
+                        <!-- JavaScript will populate clinic cards here -->
+                    </div>
+                    <button class="slider-arrow-on-card next" id="interest-next-btn">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                <div class="pagination-dots" id="interest-pagination">
+                    <!-- JS will populate this -->
+                </div>
+            </section>
+
+            <!-- PARTNERS -->
+            <section class="scroll-section partner-loop-section">
+            <h2 class="section-title">ĐƠN VỊ ĐỒNG HÀNH</h2>
+            <div class="partner-loop-wrapper">
+                <div class="partner-track">
+                <!-- Repeat partner logos twice for seamless loop -->
+                <div class="partner-logo"><img src="assets/images/have_paws.png" alt="have paws"></div>
+                <div class="partner-logo"><img src="assets/images/Royal_Canin.png" alt="Royal Canin"></div>
+                <div class="partner-logo"><img src="assets/images/Natural_Core.png" alt="Natural Core"></div>
+                <div class="partner-logo"><img src="assets/images/Cat_srang.png" alt="Catsrang"></div>
+                <div class="partner-logo"><img src="assets/images/Pet_Zone.png" alt="Pet Zone"></div>
+
+                <!-- Repeat again for seamless loop -->
+                <div class="partner-logo"><img src="assets/images/have_paws.png" alt="have paws"></div>
+                <div class="partner-logo"><img src="assets/images/Royal_Canin.png" alt="Royal Canin"></div>
+                <div class="partner-logo"><img src="assets/images/Natural_Core.png" alt="Natural Core"></div>
+                <div class="partner-logo"><img src="assets/images/Cat_srang.png" alt="Catsrang"></div>
+                <div class="partner-logo"><img src="assets/images/Pet_Zone.png" alt="Pet Zone"></div>
+                </div>
+            </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="assets/js/user-navbar.js"></script>
+    <script src="assets/js/data-pending.js"></script>
+    <script src="assets/js/data-vets.js"></script>
+    <script src="assets/js/home.js"></script>
+</body>
+
+</html>

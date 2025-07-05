@@ -1,0 +1,157 @@
+/* --- HEADER --- */
+header {
+    display: flex;
+    align-items: center;
+    /* THAY ĐỔI Ở ĐÂY: Đồng bộ padding với admin header */
+    padding: 15px 20px;
+    background-color: var(--white-color);
+    border-bottom: 1px solid var(--border-color); /* Thêm lại border để có cảm giác tương tự admin */
+}
+
+.menu-icon {
+    font-size: 24px;
+    color: var(--primary-color);
+    cursor: pointer;
+    margin-right: 15px;
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    /* THAY ĐỔI Ở ĐÂY: Đồng bộ chiều cao logo */
+    height: 30px;
+}
+
+.user-info {
+    margin-left: auto;
+}
+
+.user-info a {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.user-greeting {
+    text-align: right;
+}
+
+.user-greeting span {
+    font-size: 0.9rem;
+    color: #555;
+    font-weight: 500;
+}
+
+.user-greeting .user-name {
+    display: block;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.user-icon-shape {
+    font-size: 2.2rem;
+    color: var(--primary-color);
+}
+
+/* --- SIDEBAR --- */
+nav.sidebar {
+    width: 280px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--white-color);
+    z-index: 1000;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 2px 0 15px rgba(0, 0, 0, 0.1);
+}
+
+nav.sidebar.active {
+    transform: translateX(0);
+}
+
+.sidebar-header {
+    padding: 15px 20px;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.sidebar-header img {
+    height: 30px;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 28px;
+    line-height: 1;
+    font-weight: 300;
+    color: #aaa;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.close-btn:hover {
+    color: var(--dark-text-color);
+}
+
+nav.sidebar ul {
+    list-style: none;
+    padding-top: 20px;
+}
+
+nav.sidebar ul li a {
+    display: block;
+    padding: 20px 30px;
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 1.3rem;
+    transition: background-color 0.2s;
+}
+
+nav.sidebar ul li a:hover {
+    background-color: #f0faff;
+}
+
+/* Mục Đăng xuất */
+.logout-item { 
+    margin-top: 120px; 
+    padding: 10px; /* Thêm padding cho vùng logout */
+    border-top: 1px solid var(--border-color); /* Thêm đường kẻ ngang */
+}
+/* Nút đăng xuất sẽ không có background khi active/hover */
+.logout-item a,
+.logout-item a:hover,
+.logout-item a.active { 
+    background-color: transparent;
+    color: #555; /* Màu chữ hơi tối hơn cho khác biệt */
+    font-weight: 500;
+}
+.logout-item a:hover {
+    color: #e5383b; /* Chuyển sang màu đỏ khi hover để báo hiệu */
+}
+/* --- OVERLAY --- */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    display: none;
+}
+
+.overlay.active {
+    display: block;
+}
+.user-name { font-weight: 700; }
+.user-name:hover {   text-decoration: underline;}

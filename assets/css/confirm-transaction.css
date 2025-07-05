@@ -1,0 +1,150 @@
+/* =================================================== */
+/*             1. CÀI ĐẶT CHUNG & LAYOUT               */
+/* =================================================== */
+body {
+    background-color: var(--white-color); /* Nền trắng cho trang này */
+}
+.main-page-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px 15px;
+}
+.page-navigation {
+    margin-bottom: 25px;
+}
+.back-link {
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    font-weight: 500;
+}
+h1 {
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: var(--primary-color);
+    margin-bottom: 30px;
+}
+.section-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    text-transform: none; /* Bỏ uppercase */
+    margin-bottom: 15px;
+}
+
+/* =================================================== */
+/*                 2. TÓM TẮT GIAO DỊCH                */
+/* =================================================== */
+.transaction-summary {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 50px;
+}
+
+.transaction-items-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.item-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 20px;
+    background-color: var(--white-color);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    font-size: 1.1rem;
+}
+.item-row.placeholder {
+    color: #aaa;
+}
+
+.item-row span {
+    color: #555;
+}
+
+.item-row strong {
+    font-weight: 700;
+    color: var(--dark-text-color);
+}
+
+.total-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 20px;
+    background-color: var(--primary-color);
+    border-radius: 12px;
+    color: var(--white-color);
+}
+.total-row span {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+.total-row strong {
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.btn-submit {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    border: none;
+    padding: 16px;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    width: 60%;
+    align-self: center;
+    margin-top: 15px;
+}
+.btn-submit:hover {
+    background-color: #008fbf;
+}
+
+
+/* =================================================== */
+/*             3. CÓ THỂ BẠN QUAN TÂM                  */
+/* =================================================== */
+.interest-slider-section { margin-bottom: 30px; }
+.slider-wrapper { position: relative; }
+.interest-slider-container { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; border-radius: var(--border-radius-md); -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+.interest-slider-container::-webkit-scrollbar { display: none; }
+.slider-arrow-on-card { position: absolute; top: 50%; transform: translateY(-50%); 
+    z-index: 10; background-color: #fff; border: 1px solid #ddd; border-radius: 50%; 
+    width: 40px; height: 40px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.2s ease; color: var(--primary-color); 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);flex-shrink:0;
+  }
+  .slider-arrow-on-card.prev { left: -20px;}
+  .slider-arrow-on-card.next { right: -20px; }
+  .slider-arrow-on-card i{text-shadow: 0 0 3px currentColor,0 0 3px currentColor;}
+  .slider-arrow-on-card:hover:not(:disabled) { background-color: rgba(97, 218, 245, 0.967);}
+  .slider-arrow-on-card:disabled { opacity: 0.3; pointer-events: none; }
+.interest-slider-container .interest-card { flex: 0 0 100%; scroll-snap-align: center; background-size: cover; background-position: center; border-radius: var(--border-radius-md); padding: 30px 40px; color: var(--light-color); position: relative; overflow: hidden; min-height: 250px; display: flex; flex-direction: column; justify-content: center; }
+.interest-card::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to right, rgba(0, 178, 217, 0.95), rgba(0, 178, 217, 0.1) 60%); z-index: 1; }
+.interest-card > * { position: relative; z-index: 2; max-width: 50%; }
+.interest-card h3 { font-size: 1.8rem; margin-bottom: 15px; }
+.interest-card p { font-size: 1rem; margin-bottom: 8px; line-height: 1.5; }
+.interest-card .btn { margin-top: 20px; align-self: flex-start; }
+
+.btn {
+    border: none;
+    padding: 12px 24px;
+    border-radius: var(--border-radius-md);
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.btn-light {
+    background-color: var(--light-color);
+    color: var(--primary-color);
+}
